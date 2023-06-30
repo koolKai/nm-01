@@ -1,0 +1,34 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "Basic react fundamentals",
+  "scripts": {
+    "start": "parcel index1.html",
+    "build": "parcel build index1.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koolKai/nm-01.git"
+  },
+  "keywords": [
+    "nm01"
+  ],
+  "author": "Deepak Mittal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/koolKai/nm-01/issues"
+  },
+  "homepage": "https://github.com/koolKai/nm-01#readme",
+  "devDependencies": {
+    "parcel": "^2.9.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": [
+    "last 2 Chrome versions"
+  ]
+}
