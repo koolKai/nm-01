@@ -1,166 +1,1855 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-const heading = React.createElement(
-  "div",
-  { id: "heading" },
-  [React.createElement("h1", {}, "this h1 tag"), React.createElement("h2", {}, "this h2 tag")])
 
-; // core react thing
+// React Element 
+/*
+* Header
+  - Logo
+  - Navigation
+* Body
+  - Search
+  - RestrauntContainer
+    -restrount cards
+        - img
+        - name of restraunt
+        - cuisine
+        - time for delivery
+        - star ratings
+* Footer
+  - Copyright
+  - Links
+  - Address
+  - Contact
+*/ 
 
+const resList = [
+              {
+                "type": "restaurant",
+                "data": {
+                  "type": "F",
+                  "id": "129366",
+                  "name": "Ganesh Bhojnalaya - Jyoti Nagar",
+                  "uuid": "6f379bfe-05e2-4c78-b368-ad79f50eda46",
+                  "city": "12",
+                  "area": "Lal Kothi",
+                  "totalRatingsString": "10000+ ratings",
+                  "cloudinaryImageId": "ebqewymo7zx4kdsslxdw",
+                  "cuisines": [
+                    "North Indian",
+                    "Thalis",
+                    "Chinese",
+                    "Mughlai",
+                    "Chaat",
+                    "Punjabi",
+                    "Desserts",
+                    "Snacks",
+                    "Rajasthani",
+                    "Tandoor",
+                    "Sweets",
+                    "Indian",
+                    "Beverages",
+                    "Ice Cream",
+                    "Italian",
+                    "Pastas"
+                  ],
+                  "tags": [
+                    
+                  ],
+                  "costForTwo": 20000,
+                  "costForTwoString": "₹200 FOR TWO",
+                  "deliveryTime": 19,
+                  "minDeliveryTime": 19,
+                  "maxDeliveryTime": 19,
+                  "slaString": "19 MINS",
+                  "lastMileTravel": 2.700000047683716,
+                  "slugs": {
+                    "restaurant": "ganesh-bhojnalaya-lal-kothi-lal-kothi",
+                    "city": "jaipur"
+                  },
+                  "cityState": "12",
+                  "address": "Shop 2, Gate 1, Jyoti Nagar, Lal Kothi, Jaipur",
+                  "locality": "Jyoti Nagar",
+                  "parentId": 85926,
+                  "unserviceable": false,
+                  "veg": true,
+                  "select": false,
+                  "favorite": false,
+                  "tradeCampaignHeaders": [
+                    
+                  ],
+                  "ribbon": [
+                    {
+                      "type": "PROMOTED"
+                    }
+                  ],
+                  "chain": [
+                    
+                  ],
+                  "feeDetails": {
+                    "fees": [
+                      {
+                        "name": "distance",
+                        "fee": 2300,
+                        "message": ""
+                      },
+                      {
+                        "name": "time",
+                        "fee": 0,
+                        "message": ""
+                      },
+                      {
+                        "name": "special",
+                        "fee": 0,
+                        "message": ""
+                      }
+                    ],
+                    "totalFees": 2300,
+                    "message": "",
+                    "title": "Delivery Charge",
+                    "amount": "2300",
+                    "icon": ""
+                  },
+                  "availability": {
+                    "opened": true,
+                    "nextOpenMessage": "",
+                    "nextCloseMessage": ""
+                  },
+                  "longDistanceEnabled": 0,
+                  "rainMode": "NONE",
+                  "thirdPartyAddress": false,
+                  "thirdPartyVendor": "",
+                  "adTrackingID": "cid=7381264~p=1~eid=00000189-1fa9-fae2-2daf-fe9c00dc0112~srvts=1688453380834",
+                  "badges": {
+                    "imageBased": [
+                      
+                    ],
+                    "textBased": [
+                      
+                    ],
+                    "textExtendedBadges": [
+                      
+                    ]
+                  },
+                  "lastMileTravelString": "2.7 kms",
+                  "hasSurge": false,
+                  "aggregatedDiscountInfoV3": {
+                    "header": "60% OFF",
+                    "subHeader": "UPTO ₹120",
+                    "discountTag": "",
+                    "headerTypeV2": 0
+                  },
+                  "sla": {
+                    "restaurantId": "129366",
+                    "deliveryTime": 19,
+                    "minDeliveryTime": 19,
+                    "maxDeliveryTime": 19,
+                    "lastMileTravel": 2.700000047683716,
+                    "lastMileDistance": 0,
+                    "serviceability": "SERVICEABLE",
+                    "rainMode": "NONE",
+                    "longDistance": "NOT_LONG_DISTANCE",
+                    "preferentialService": false,
+                    "iconType": "EMPTY"
+                  },
+                  "promoted": true,
+                  "avgRating": "4.1",
+                  "totalRatings": 10000,
+                  "new": false
+                },
+                "subtype": "basic"
+              },
+              {
+                "type": "restaurant",
+                "data": {
+                  "type": "F",
+                  "id": "249749",
+                  "name": "McDonald's",
+                  "uuid": "7a53e1b3-02fd-4ab7-8a02-97ac75cdf807",
+                  "city": "12",
+                  "area": "Bais Godam",
+                  "totalRatingsString": "10000+ ratings",
+                  "cloudinaryImageId": "08eee882fda81b68e5c36e3a5d89d8c0",
+                  "cuisines": [
+                    "American", "Spanish"
+                  ],
+                  "tags": [
+                    
+                  ],
+                  "costForTwo": 40000,
+                  "costForTwoString": "₹400 FOR TWO",
+                  "deliveryTime": 19,
+                  "minDeliveryTime": 19,
+                  "maxDeliveryTime": 19,
+                  "slaString": "19 MINS",
+                  "lastMileTravel": 1.399999976158142,
+                  "slugs": {
+                    "restaurant": "mcdonalds-rj-jaipur-crystal-palm-c-scheme",
+                    "city": "jaipur"
+                  },
+                  "cityState": "12",
+                  "address": "RJ Jaipur Crystal Palm, Plot no-2, Shakar Circle, Sardar Patel Marg,C-scheme, Jaipur - 302004",
+                  "locality": "Crystal Palm Mall",
+                  "parentId": 630,
+                  "unserviceable": false,
+                  "veg": false,
+                  "select": false,
+                  "favorite": false,
+                  "tradeCampaignHeaders": [
+                    
+                  ],
+                  "chain": [
+                    
+                  ],
+                  "feeDetails": {
+                    "fees": [
+                      {
+                        "name": "distance",
+                        "fee": 2300,
+                        "message": ""
+                      },
+                      {
+                        "name": "time",
+                        "fee": 0,
+                        "message": ""
+                      },
+                      {
+                        "name": "special",
+                        "fee": 0,
+                        "message": ""
+                      }
+                    ],
+                    "totalFees": 2300,
+                    "message": "",
+                    "title": "Delivery Charge",
+                    "amount": "2300",
+                    "icon": ""
+                  },
+                  "availability": {
+                    "opened": true,
+                    "nextOpenMessage": "",
+                    "nextCloseMessage": ""
+                  },
+                  "longDistanceEnabled": 0,
+                  "rainMode": "NONE",
+                  "thirdPartyAddress": false,
+                  "thirdPartyVendor": "",
+                  "adTrackingID": "",
+                  "badges": {
+                    "imageBased": [
+                      
+                    ],
+                    "textBased": [
+                      
+                    ],
+                    "textExtendedBadges": [
+                      
+                    ]
+                  },
+                  "lastMileTravelString": "1.3 kms",
+                  "hasSurge": false,
+                  "aggregatedDiscountInfoV3": {
+                    "header": "20% OFF",
+                    "subHeader": "UPTO ₹50",
+                    "discountTag": "",
+                    "headerTypeV2": 0
+                  },
+                  "sla": {
+                    "restaurantId": "249749",
+                    "deliveryTime": 19,
+                    "minDeliveryTime": 19,
+                    "maxDeliveryTime": 19,
+                    "lastMileTravel": 1.399999976158142,
+                    "lastMileDistance": 0,
+                    "serviceability": "SERVICEABLE",
+                    "rainMode": "NONE",
+                    "longDistance": "NOT_LONG_DISTANCE",
+                    "preferentialService": false,
+                    "iconType": "EMPTY"
+                  },
+                  "promoted": false,
+                  "avgRating": "4.1",
+                  "totalRatings": 10000,
+                  "new": false
+                },
+                "subtype": "basic"
+              },
+              {
+                "type": "restaurant",
+                "data": {
+                  "type": "F",
+                  "id": "194796",
+                  "name": "Kanha",
+                  "uuid": "5f2084d0-e65f-43fc-9203-35f97bd35f97",
+                  "city": "12",
+                  "area": "Vidhyadhar Nagar",
+                  "totalRatingsString": "10000+ ratings",
+                  "cloudinaryImageId": "qdsex48yldowovlix3ku",
+                  "cuisines": [
+                    "Sweets",
+                    "North Indian",
+                    "South Indian",
+                    "Chinese",
+                    "Continental",
+                    "Desserts",
+                    "Thalis",
+                    "Beverages",
+                    "Pizzas",
+                    "Punjabi"
+                  ],
+                  "tags": [
+                    
+                  ],
+                  "costForTwo": 20000,
+                  "costForTwoString": "₹200 FOR TWO",
+                  "deliveryTime": 37,
+                  "minDeliveryTime": 37,
+                  "maxDeliveryTime": 37,
+                  "slaString": "37 MINS",
+                  "lastMileTravel": 7.400000095367432,
+                  "slugs": {
+                    "restaurant": "kanha-vidhyadhar-nagar-vidhyadhar-nagar-vidhyadhar-nagar",
+                    "city": "jaipur"
+                  },
+                  "cityState": "12",
+                  "address": "Kanha Sweets & Restaurant, Sector 2, Central Spine, Vidhyadhar Nagar, Jaipur, Rajasthan, India",
+                  "locality": "Vidhyadhar Nagar",
+                  "parentId": 4650,
+                  "unserviceable": false,
+                  "veg": false,
+                  "select": false,
+                  "favorite": false,
+                  "tradeCampaignHeaders": [
+                    
+                  ],
+                  "ribbon": [
+                    {
+                      "type": "PROMOTED"
+                    }
+                  ],
+                  "chain": [
+                    
+                  ],
+                  "feeDetails": {
+                    "fees": [
+                      {
+                        "name": "distance",
+                        "fee": 5800,
+                        "message": ""
+                      },
+                      {
+                        "name": "time",
+                        "fee": 0,
+                        "message": ""
+                      },
+                      {
+                        "name": "special",
+                        "fee": 0,
+                        "message": ""
+                      }
+                    ],
+                    "totalFees": 5800,
+                    "message": "",
+                    "title": "Delivery Charge",
+                    "amount": "5800",
+                    "icon": ""
+                  },
+                  "availability": {
+                    "opened": true,
+                    "nextOpenMessage": "",
+                    "nextCloseMessage": ""
+                  },
+                  "longDistanceEnabled": 0,
+                  "rainMode": "NONE",
+                  "thirdPartyAddress": false,
+                  "thirdPartyVendor": "",
+                  "adTrackingID": "cid=7382294~p=10~eid=00000189-1fa9-fae2-2daf-fe9f00dc0a3d~srvts=1688453380834",
+                  "badges": {
+                    "imageBased": [
+                      
+                    ],
+                    "textBased": [
+                      
+                    ],
+                    "textExtendedBadges": [
+                      
+                    ]
+                  },
+                  "lastMileTravelString": "7.4 kms",
+                  "hasSurge": false,
+                  "aggregatedDiscountInfoV3": {
+                    "header": "50% OFF",
+                    "subHeader": "UPTO ₹100",
+                    "discountTag": "",
+                    "headerTypeV2": 0
+                  },
+                  "sla": {
+                    "restaurantId": "194796",
+                    "deliveryTime": 37,
+                    "minDeliveryTime": 37,
+                    "maxDeliveryTime": 37,
+                    "lastMileTravel": 7.400000095367432,
+                    "lastMileDistance": 0,
+                    "serviceability": "SERVICEABLE",
+                    "rainMode": "NONE",
+                    "longDistance": "NOT_LONG_DISTANCE",
+                    "preferentialService": false,
+                    "iconType": "EMPTY"
+                  },
+                  "promoted": true,
+                  "avgRating": "4.2",
+                  "totalRatings": 10000,
+                  "new": false
+                },
+                "subtype": "basic"
+              },
+              {
+                "type": "restaurant",
+                "data": {
+                  "type": "F",
+                  "id": "54532",
+                  "name": "Agarwal Caterers - Shastri Nagar",
+                  "uuid": "4a96e999-23ed-4f99-90fe-6649afefd4a0",
+                  "city": "12",
+                  "area": "Shashtri Nagar",
+                  "totalRatingsString": "10000+ ratings",
+                  "cloudinaryImageId": "igynbxeggu4dexnrlxxd",
+                  "cuisines": [
+                    "Desserts",
+                    "Sweets"
+                  ],
+                  "tags": [
+                    
+                  ],
+                  "costForTwo": 20000,
+                  "costForTwoString": "₹200 FOR TWO",
+                  "deliveryTime": 25,
+                  "minDeliveryTime": 25,
+                  "maxDeliveryTime": 25,
+                  "slaString": "25 MINS",
+                  "lastMileTravel": 4.800000190734863,
+                  "slugs": {
+                    "restaurant": "agarwal-caterers-shastri-nagar-sindhi-camp",
+                    "city": "jaipur"
+                  },
+                  "cityState": "12",
+                  "address": "E53, Near Science Park, Shastri Nagar, Jaipur",
+                  "locality": "Science Park",
+                  "parentId": 27555,
+                  "unserviceable": false,
+                  "veg": true,
+                  "select": false,
+                  "favorite": false,
+                  "tradeCampaignHeaders": [
+                    
+                  ],
+                  "ribbon": [
+                    {
+                      "type": "PROMOTED"
+                    }
+                  ],
+                  "chain": [
+                    
+                  ],
+                  "feeDetails": {
+                    "fees": [
+                      {
+                        "name": "distance",
+                        "fee": 3000,
+                        "message": ""
+                      },
+                      {
+                        "name": "time",
+                        "fee": 0,
+                        "message": ""
+                      },
+                      {
+                        "name": "special",
+                        "fee": 0,
+                        "message": ""
+                      }
+                    ],
+                    "totalFees": 3000,
+                    "message": "",
+                    "title": "Delivery Charge",
+                    "amount": "3000",
+                    "icon": ""
+                  },
+                  "availability": {
+                    "opened": true,
+                    "nextOpenMessage": "",
+                    "nextCloseMessage": ""
+                  },
+                  "longDistanceEnabled": 0,
+                  "rainMode": "NONE",
+                  "thirdPartyAddress": false,
+                  "thirdPartyVendor": "",
+                  "adTrackingID": "cid=7381247~p=4~eid=00000189-1fa9-fae2-2daf-fe9d00dc0422~srvts=1688453380834",
+                  "badges": {
+                    "imageBased": [
+                      
+                    ],
+                    "textBased": [
+                      
+                    ],
+                    "textExtendedBadges": [
+                      
+                    ]
+                  },
+                  "lastMileTravelString": "4.8 kms",
+                  "hasSurge": false,
+                  "aggregatedDiscountInfoV3": {
+                    "header": "30% OFF",
+                    "subHeader": "UPTO ₹75",
+                    "discountTag": "",
+                    "headerTypeV2": 0
+                  },
+                  "sla": {
+                    "restaurantId": "54532",
+                    "deliveryTime": 25,
+                    "minDeliveryTime": 25,
+                    "maxDeliveryTime": 25,
+                    "lastMileTravel": 4.800000190734863,
+                    "lastMileDistance": 0,
+                    "serviceability": "SERVICEABLE",
+                    "rainMode": "NONE",
+                    "longDistance": "NOT_LONG_DISTANCE",
+                    "preferentialService": false,
+                    "iconType": "EMPTY"
+                  },
+                  "promoted": true,
+                  "avgRating": "4.3",
+                  "totalRatings": 10000,
+                  "new": false
+                },
+                "subtype": "basic"
+              },
+              {
+                "type": "restaurant",
+                "data": {
+                  "type": "F",
+                  "id": "346621",
+                  "name": "Pizza Bar",
+                  "uuid": "872a4c60-784c-485a-aa0e-3e50be31b116",
+                  "city": "12",
+                  "area": "Sodala",
+                  "totalRatingsString": "1000+ ratings",
+                  "cloudinaryImageId": "cwfxgvszchj8oelgv09r",
+                  "cuisines": [
+                    "Pizzas",
+                    "Beverages"
+                  ],
+                  "tags": [
+                    
+                  ],
+                  "costForTwo": 25000,
+                  "costForTwoString": "₹250 FOR TWO",
+                  "deliveryTime": 27,
+                  "minDeliveryTime": 27,
+                  "maxDeliveryTime": 27,
+                  "slaString": "27 MINS",
+                  "lastMileTravel": 2.9000000953674316,
+                  "slugs": {
+                    "restaurant": "pizza-bar-lal-kothi-lal-kothi",
+                    "city": "jaipur"
+                  },
+                  "cityState": "12",
+                  "address": "45 kailashpuri,just before Sri Sri Girls PG, Shiv Puri Colony, Sodala, Jaipur, Rajasthan, India",
+                  "locality": "Shiv Puri Colony",
+                  "parentId": 158340,
+                  "unserviceable": false,
+                  "veg": false,
+                  "select": false,
+                  "favorite": false,
+                  "tradeCampaignHeaders": [
+                    
+                  ],
+                  "chain": [
+                    
+                  ],
+                  "feeDetails": {
+                    "fees": [
+                      {
+                        "name": "distance",
+                        "fee": 2300,
+                        "message": ""
+                      },
+                      {
+                        "name": "time",
+                        "fee": 0,
+                        "message": ""
+                      },
+                      {
+                        "name": "special",
+                        "fee": 0,
+                        "message": ""
+                      }
+                    ],
+                    "totalFees": 2300,
+                    "message": "",
+                    "title": "Delivery Charge",
+                    "amount": "2300",
+                    "icon": ""
+                  },
+                  "availability": {
+                    "opened": true,
+                    "nextOpenMessage": "",
+                    "nextCloseMessage": ""
+                  },
+                  "longDistanceEnabled": 0,
+                  "rainMode": "NONE",
+                  "thirdPartyAddress": false,
+                  "thirdPartyVendor": "",
+                  "adTrackingID": "",
+                  "badges": {
+                    "imageBased": [
+                      
+                    ],
+                    "textBased": [
+                      
+                    ],
+                    "textExtendedBadges": [
+                      
+                    ]
+                  },
+                  "lastMileTravelString": "2.9 kms",
+                  "hasSurge": false,
+                  "aggregatedDiscountInfoV3": {
+                    "header": "50% OFF",
+                    "subHeader": "",
+                    "discountTag": "FLAT DEAL",
+                    "headerTypeV2": 0
+                  },
+                  "sla": {
+                    "restaurantId": "346621",
+                    "deliveryTime": 27,
+                    "minDeliveryTime": 27,
+                    "maxDeliveryTime": 27,
+                    "lastMileTravel": 2.9000000953674316,
+                    "lastMileDistance": 0,
+                    "serviceability": "SERVICEABLE",
+                    "rainMode": "NONE",
+                    "longDistance": "NOT_LONG_DISTANCE",
+                    "preferentialService": false,
+                    "iconType": "EMPTY"
+                  },
+                  "promoted": false,
+                  "avgRating": "3.7",
+                  "totalRatings": 1000,
+                  "new": false
+                },
+                "subtype": "basic"
+              },
+              {
+                "type": "restaurant",
+                "data": {
+                  "type": "F",
+                  "id": "143095",
+                  "name": "Mughal Restaurant",
+                  "uuid": "e3f04716-9586-42a2-b0a8-058736e7fd42",
+                  "city": "12",
+                  "area": "Hasanpura",
+                  "totalRatingsString": "10000+ ratings",
+                  "cloudinaryImageId": "cke86uanz4tbdpdumgei",
+                  "cuisines": [
+                    "North Indian",
+                    "Biryani",
+                    "Mughlai",
+                    "Kebabs",
+                    "Tandoor",
+                    "Thalis"
+                  ],
+                  "tags": [
+                    
+                  ],
+                  "costForTwo": 20000,
+                  "costForTwoString": "₹200 FOR TWO",
+                  "deliveryTime": 17,
+                  "minDeliveryTime": 17,
+                  "maxDeliveryTime": 17,
+                  "slaString": "17 MINS",
+                  "lastMileTravel": 1.899999976158142,
+                  "slugs": {
+                    "restaurant": "mughal-hotel-hasanpura-lal-kothi",
+                    "city": "jaipur"
+                  },
+                  "cityState": "12",
+                  "address": "55 & 56, NBC, Hasanpura, Jaipur",
+                  "locality": "",
+                  "parentId": 19456,
+                  "unserviceable": false,
+                  "veg": false,
+                  "select": false,
+                  "favorite": false,
+                  "tradeCampaignHeaders": [
+                    
+                  ],
+                  "chain": [
+                    
+                  ],
+                  "feeDetails": {
+                    "fees": [
+                      {
+                        "name": "distance",
+                        "fee": 2300,
+                        "message": ""
+                      },
+                      {
+                        "name": "time",
+                        "fee": 0,
+                        "message": ""
+                      },
+                      {
+                        "name": "special",
+                        "fee": 0,
+                        "message": ""
+                      }
+                    ],
+                    "totalFees": 2300,
+                    "message": "",
+                    "title": "Delivery Charge",
+                    "amount": "2300",
+                    "icon": ""
+                  },
+                  "availability": {
+                    "opened": true,
+                    "nextOpenMessage": "",
+                    "nextCloseMessage": ""
+                  },
+                  "longDistanceEnabled": 0,
+                  "rainMode": "NONE",
+                  "thirdPartyAddress": false,
+                  "thirdPartyVendor": "",
+                  "adTrackingID": "",
+                  "badges": {
+                    "imageBased": [
+                      
+                    ],
+                    "textBased": [
+                      
+                    ],
+                    "textExtendedBadges": [
+                      
+                    ]
+                  },
+                  "lastMileTravelString": "1.8 kms",
+                  "hasSurge": false,
+                  "aggregatedDiscountInfoV3": {
+                    "header": "50% OFF",
+                    "subHeader": "UPTO ₹100",
+                    "discountTag": "",
+                    "headerTypeV2": 0
+                  },
+                  "sla": {
+                    "restaurantId": "143095",
+                    "deliveryTime": 17,
+                    "minDeliveryTime": 17,
+                    "maxDeliveryTime": 17,
+                    "lastMileTravel": 1.899999976158142,
+                    "lastMileDistance": 0,
+                    "serviceability": "SERVICEABLE",
+                    "rainMode": "NONE",
+                    "longDistance": "NOT_LONG_DISTANCE",
+                    "preferentialService": false,
+                    "iconType": "EMPTY"
+                  },
+                  "promoted": false,
+                  "avgRating": "3.4",
+                  "totalRatings": 10000,
+                  "new": false
+                },
+                "subtype": "basic"
+              },
+              {
+                "type": "restaurant",
+                "data": {
+                  "type": "F",
+                  "id": "44421",
+                  "name": "Agarwal Caterers",
+                  "uuid": "627d843d-b3f4-430a-8f11-5e406500d8c9",
+                  "city": "12",
+                  "area": "Vaishali Nagar",
+                  "totalRatingsString": "10000+ ratings",
+                  "cloudinaryImageId": "nttatsmqh2xrgckpi53k",
+                  "cuisines": [
+                    "Sweets",
+                    "North Indian",
+                    "Italian"
+                  ],
+                  "tags": [
+                    
+                  ],
+                  "costForTwo": 20000,
+                  "costForTwoString": "₹200 FOR TWO",
+                  "deliveryTime": 27,
+                  "minDeliveryTime": 27,
+                  "maxDeliveryTime": 27,
+                  "slaString": "27 MINS",
+                  "lastMileTravel": 5,
+                  "slugs": {
+                    "restaurant": "agarwal-sweets-caterers-crown-square-vaishali-nagar-vaishali-nagar",
+                    "city": "jaipur"
+                  },
+                  "cityState": "12",
+                  "address": "Gandhi Path, Moti Nagar, Scheme Number 8, Girnar Colony South, Vaishali Nagar, Jaipur, Rajasthan 302021",
+                  "locality": "Crown Square",
+                  "parentId": 16883,
+                  "unserviceable": false,
+                  "veg": true,
+                  "select": false,
+                  "favorite": false,
+                  "tradeCampaignHeaders": [
+                    
+                  ],
+                  "ribbon": [
+                    {
+                      "type": "PROMOTED"
+                    }
+                  ],
+                  "chain": [
+                    
+                  ],
+                  "feeDetails": {
+                    "fees": [
+                      {
+                        "name": "distance",
+                        "fee": 4400,
+                        "message": ""
+                      },
+                      {
+                        "name": "time",
+                        "fee": 0,
+                        "message": ""
+                      },
+                      {
+                        "name": "special",
+                        "fee": 0,
+                        "message": ""
+                      }
+                    ],
+                    "totalFees": 4400,
+                    "message": "",
+                    "title": "Delivery Charge",
+                    "amount": "4400",
+                    "icon": ""
+                  },
+                  "availability": {
+                    "opened": true,
+                    "nextOpenMessage": "",
+                    "nextCloseMessage": ""
+                  },
+                  "longDistanceEnabled": 0,
+                  "rainMode": "NONE",
+                  "thirdPartyAddress": false,
+                  "thirdPartyVendor": "",
+                  "adTrackingID": "cid=7381238~p=7~eid=00000189-1fa9-fae2-2daf-fe9e00dc0708~srvts=1688453380834",
+                  "badges": {
+                    "imageBased": [
+                      
+                    ],
+                    "textBased": [
+                      
+                    ],
+                    "textExtendedBadges": [
+                      
+                    ]
+                  },
+                  "lastMileTravelString": "5 kms",
+                  "hasSurge": false,
+                  "aggregatedDiscountInfoV3": {
+                    "header": "30% OFF",
+                    "subHeader": "UPTO ₹75",
+                    "discountTag": "",
+                    "headerTypeV2": 0
+                  },
+                  "sla": {
+                    "restaurantId": "44421",
+                    "deliveryTime": 27,
+                    "minDeliveryTime": 27,
+                    "maxDeliveryTime": 27,
+                    "lastMileTravel": 5,
+                    "lastMileDistance": 0,
+                    "serviceability": "SERVICEABLE",
+                    "rainMode": "NONE",
+                    "longDistance": "NOT_LONG_DISTANCE",
+                    "preferentialService": false,
+                    "iconType": "EMPTY"
+                  },
+                  "promoted": true,
+                  "avgRating": "4.2",
+                  "totalRatings": 10000,
+                  "new": false
+                },
+                "subtype": "basic"
+              },
+              {
+                "type": "restaurant",
+                "data": {
+                  "type": "F",
+                  "id": "45977",
+                  "name": "Burger Farm",
+                  "uuid": "1d358b51-3727-434f-a9f0-a7e27ac39cae",
+                  "city": "12",
+                  "area": "C Scheme",
+                  "totalRatingsString": "10000+ ratings",
+                  "cloudinaryImageId": "nzcyy3dllok64io32kva",
+                  "cuisines": [
+                    "American",
+                    "Continental",
+                    "Italian-American",
+                    "Snacks",
+                    "Grill",
+                    "Beverages",
+                    "Bakery",
+                    "Desserts",
+                    "Barbecue"
+                  ],
+                  "tags": [
+                    
+                  ],
+                  "costForTwo": 20000,
+                  "costForTwoString": "₹200 FOR TWO",
+                  "deliveryTime": 18,
+                  "minDeliveryTime": 18,
+                  "maxDeliveryTime": 18,
+                  "slaString": "18 MINS",
+                  "lastMileTravel": 1.2000000476837158,
+                  "slugs": {
+                    "restaurant": "burger-farm-c-scheme-c-scheme",
+                    "city": "jaipur"
+                  },
+                  "cityState": "12",
+                  "address": "GROUND FLOOR PLOT NO.F-30, AZAD MARG C-SCHEME JAIPUR, Jaipur, Jaipur, Rajasthan-302001",
+                  "locality": "Azad Marg",
+                  "parentId": 4660,
+                  "unserviceable": false,
+                  "veg": false,
+                  "select": false,
+                  "favorite": false,
+                  "tradeCampaignHeaders": [
+                    
+                  ],
+                  "chain": [
+                    
+                  ],
+                  "feeDetails": {
+                    "fees": [
+                      {
+                        "name": "distance",
+                        "fee": 2300,
+                        "message": ""
+                      },
+                      {
+                        "name": "time",
+                        "fee": 0,
+                        "message": ""
+                      },
+                      {
+                        "name": "special",
+                        "fee": 0,
+                        "message": ""
+                      }
+                    ],
+                    "totalFees": 2300,
+                    "message": "",
+                    "title": "Delivery Charge",
+                    "amount": "2300",
+                    "icon": ""
+                  },
+                  "availability": {
+                    "opened": true,
+                    "nextOpenMessage": "",
+                    "nextCloseMessage": ""
+                  },
+                  "longDistanceEnabled": 0,
+                  "rainMode": "NONE",
+                  "thirdPartyAddress": false,
+                  "thirdPartyVendor": "",
+                  "adTrackingID": "",
+                  "badges": {
+                    "imageBased": [
+                      
+                    ],
+                    "textBased": [
+                      
+                    ],
+                    "textExtendedBadges": [
+                      
+                    ]
+                  },
+                  "lastMileTravelString": "1.2 kms",
+                  "hasSurge": false,
+                  "aggregatedDiscountInfoV3": {
+                    "header": "30% OFF",
+                    "subHeader": "UPTO ₹75",
+                    "discountTag": "",
+                    "headerTypeV2": 0
+                  },
+                  "sla": {
+                    "restaurantId": "45977",
+                    "deliveryTime": 18,
+                    "minDeliveryTime": 18,
+                    "maxDeliveryTime": 18,
+                    "lastMileTravel": 1.2000000476837158,
+                    "lastMileDistance": 0,
+                    "serviceability": "SERVICEABLE",
+                    "rainMode": "NONE",
+                    "longDistance": "NOT_LONG_DISTANCE",
+                    "preferentialService": false,
+                    "iconType": "EMPTY"
+                  },
+                  "promoted": false,
+                  "avgRating": "4.2",
+                  "totalRatings": 10000,
+                  "new": false
+                },
+                "subtype": "basic"
+              },
+              {
+                "type": "restaurant",
+                "data": {
+                  "type": "F",
+                  "id": "60482",
+                  "name": "Roll Express",
+                  "uuid": "b05af642-e240-45fc-9cfa-662a9181e54a",
+                  "city": "12",
+                  "area": "C Scheme",
+                  "totalRatingsString": "5000+ ratings",
+                  "cloudinaryImageId": "de58cec62dcd253e469655455e70b8ff",
+                  "cuisines": [
+                    "Fast Food",
+                    "Snacks",
+                    "North Indian",
+                    "Chinese",
+                    "Bengali",
+                    "Beverages",
+                    "Lucknowi",
+                    "Mughlai",
+                    "Indian",
+                    "Continental"
+                  ],
+                  "tags": [
+                    
+                  ],
+                  "costForTwo": 20000,
+                  "costForTwoString": "₹200 FOR TWO",
+                  "deliveryTime": 29,
+                  "minDeliveryTime": 29,
+                  "maxDeliveryTime": 29,
+                  "slaString": "29 MINS",
+                  "lastMileTravel": 1.2999999523162842,
+                  "slugs": {
+                    "restaurant": "roll-express-ramesh-marg-c-scheme",
+                    "city": "jaipur"
+                  },
+                  "cityState": "12",
+                  "address": " J-23 Subhash Marg, Bhagadiya bhawan, C-scheme, Jaipur",
+                  "locality": "Ramesh Marg",
+                  "parentId": 16561,
+                  "unserviceable": false,
+                  "veg": false,
+                  "select": false,
+                  "favorite": false,
+                  "tradeCampaignHeaders": [
+                    
+                  ],
+                  "chain": [
+                    
+                  ],
+                  "feeDetails": {
+                    "fees": [
+                      {
+                        "name": "distance",
+                        "fee": 2300,
+                        "message": ""
+                      },
+                      {
+                        "name": "time",
+                        "fee": 0,
+                        "message": ""
+                      },
+                      {
+                        "name": "special",
+                        "fee": 0,
+                        "message": ""
+                      }
+                    ],
+                    "totalFees": 2300,
+                    "message": "",
+                    "title": "Delivery Charge",
+                    "amount": "2300",
+                    "icon": ""
+                  },
+                  "availability": {
+                    "opened": true,
+                    "nextOpenMessage": "",
+                    "nextCloseMessage": ""
+                  },
+                  "longDistanceEnabled": 0,
+                  "rainMode": "NONE",
+                  "thirdPartyAddress": false,
+                  "thirdPartyVendor": "",
+                  "adTrackingID": "",
+                  "badges": {
+                    "imageBased": [
+                      
+                    ],
+                    "textBased": [
+                      
+                    ],
+                    "textExtendedBadges": [
+                      
+                    ]
+                  },
+                  "lastMileTravelString": "1.2 kms",
+                  "hasSurge": false,
+                  "aggregatedDiscountInfoV3": {
+                    "header": "50% OFF",
+                    "subHeader": "",
+                    "discountTag": "FLAT DEAL",
+                    "headerTypeV2": 0
+                  },
+                  "sla": {
+                    "restaurantId": "60482",
+                    "deliveryTime": 29,
+                    "minDeliveryTime": 29,
+                    "maxDeliveryTime": 29,
+                    "lastMileTravel": 1.2999999523162842,
+                    "lastMileDistance": 0,
+                    "serviceability": "SERVICEABLE",
+                    "rainMode": "NONE",
+                    "longDistance": "NOT_LONG_DISTANCE",
+                    "preferentialService": false,
+                    "iconType": "EMPTY"
+                  },
+                  "promoted": false,
+                  "avgRating": "3.8",
+                  "totalRatings": 5000,
+                  "new": false
+                },
+                "subtype": "basic"
+              },
+              {
+                "type": "restaurant",
+                "data": {
+                  "type": "F",
+                  "id": "44215",
+                  "name": "Ghar Ka Swad",
+                  "uuid": "f13a90b2-e4bc-4c5b-a716-9d686a49128b",
+                  "city": "12",
+                  "area": "C Scheme",
+                  "totalRatingsString": "5000+ ratings",
+                  "cloudinaryImageId": "lvbcoyeqin1gub0tycax",
+                  "cuisines": [
+                    "North Indian",
+                    "Thalis",
+                    "Mughlai",
+                    "Punjabi",
+                    "Rajasthani",
+                    "Desserts"
+                  ],
+                  "tags": [
+                    
+                  ],
+                  "costForTwo": 25000,
+                  "costForTwoString": "₹250 FOR TWO",
+                  "deliveryTime": 22,
+                  "minDeliveryTime": 22,
+                  "maxDeliveryTime": 22,
+                  "slaString": "22 MINS",
+                  "lastMileTravel": 1.2000000476837158,
+                  "slugs": {
+                    "restaurant": "ghar-ka-swad-civil-lines-lal-kothi",
+                    "city": "jaipur"
+                  },
+                  "cityState": "12",
+                  "address": "23 Civil Lines Road, Shivaji Nagar, Madrampur,,jaipur",
+                  "locality": "Civil Lines Road",
+                  "parentId": 4439,
+                  "unserviceable": false,
+                  "veg": true,
+                  "select": false,
+                  "favorite": false,
+                  "tradeCampaignHeaders": [
+                    
+                  ],
+                  "chain": [
+                    
+                  ],
+                  "feeDetails": {
+                    "fees": [
+                      {
+                        "name": "distance",
+                        "fee": 2300,
+                        "message": ""
+                      },
+                      {
+                        "name": "time",
+                        "fee": 0,
+                        "message": ""
+                      },
+                      {
+                        "name": "special",
+                        "fee": 0,
+                        "message": ""
+                      }
+                    ],
+                    "totalFees": 2300,
+                    "message": "",
+                    "title": "Delivery Charge",
+                    "amount": "2300",
+                    "icon": ""
+                  },
+                  "availability": {
+                    "opened": true,
+                    "nextOpenMessage": "",
+                    "nextCloseMessage": ""
+                  },
+                  "longDistanceEnabled": 0,
+                  "rainMode": "NONE",
+                  "thirdPartyAddress": false,
+                  "thirdPartyVendor": "",
+                  "adTrackingID": "",
+                  "badges": {
+                    "imageBased": [
+                      
+                    ],
+                    "textBased": [
+                      
+                    ],
+                    "textExtendedBadges": [
+                      
+                    ]
+                  },
+                  "lastMileTravelString": "1.2 kms",
+                  "hasSurge": false,
+                  "aggregatedDiscountInfoV3": {
+                    "header": "40% OFF",
+                    "subHeader": "UPTO ₹80",
+                    "discountTag": "",
+                    "headerTypeV2": 0
+                  },
+                  "sla": {
+                    "restaurantId": "44215",
+                    "deliveryTime": 22,
+                    "minDeliveryTime": 22,
+                    "maxDeliveryTime": 22,
+                    "lastMileTravel": 1.2000000476837158,
+                    "lastMileDistance": 0,
+                    "serviceability": "SERVICEABLE",
+                    "rainMode": "NONE",
+                    "longDistance": "NOT_LONG_DISTANCE",
+                    "preferentialService": false,
+                    "iconType": "EMPTY"
+                  },
+                  "promoted": false,
+                  "avgRating": "4.4",
+                  "totalRatings": 5000,
+                  "new": false
+                },
+                "subtype": "basic"
+              },
+              {
+                "type": "restaurant",
+                "data": {
+                  "type": "F",
+                  "id": "375271",
+                  "name": "Burger Shack by Brown Sugar",
+                  "uuid": "a5461352-9194-42b8-add3-ca6ce038674e",
+                  "city": "12",
+                  "area": "Subhash Nagar",
+                  "totalRatingsString": "1000+ ratings",
+                  "cloudinaryImageId": "b500d3558320c44fa781543edbe7eac6",
+                  "cuisines": [
+                    "American",
+                    "Continental",
+                    "Burgers",
+                    "Snacks",
+                    "Fast Food",
+                    "Desserts",
+                    "Beverages",
+                    "Pizzas"
+                  ],
+                  "tags": [
+                    
+                  ],
+                  "costForTwo": 20000,
+                  "costForTwoString": "₹200 FOR TWO",
+                  "deliveryTime": 15,
+                  "minDeliveryTime": 15,
+                  "maxDeliveryTime": 15,
+                  "slaString": "15 MINS",
+                  "lastMileTravel": 1.2000000476837158,
+                  "slugs": {
+                    "restaurant": "burger-shack-c-scheme-c-scheme",
+                    "city": "jaipur"
+                  },
+                  "cityState": "12",
+                  "address": "J-2 Shubhash Marg, Jamna Lal Bajaj Marg C-Scheme Jaipur",
+                  "locality": "",
+                  "parentId": 11388,
+                  "unserviceable": false,
+                  "veg": true,
+                  "select": false,
+                  "favorite": false,
+                  "tradeCampaignHeaders": [
+                    
+                  ],
+                  "chain": [
+                    
+                  ],
+                  "feeDetails": {
+                    "fees": [
+                      {
+                        "name": "distance",
+                        "fee": 2300,
+                        "message": ""
+                      },
+                      {
+                        "name": "time",
+                        "fee": 0,
+                        "message": ""
+                      },
+                      {
+                        "name": "special",
+                        "fee": 0,
+                        "message": ""
+                      }
+                    ],
+                    "totalFees": 2300,
+                    "message": "",
+                    "title": "Delivery Charge",
+                    "amount": "2300",
+                    "icon": ""
+                  },
+                  "availability": {
+                    "opened": true,
+                    "nextOpenMessage": "",
+                    "nextCloseMessage": ""
+                  },
+                  "longDistanceEnabled": 0,
+                  "rainMode": "NONE",
+                  "thirdPartyAddress": false,
+                  "thirdPartyVendor": "",
+                  "adTrackingID": "",
+                  "badges": {
+                    "imageBased": [
+                      
+                    ],
+                    "textBased": [
+                      
+                    ],
+                    "textExtendedBadges": [
+                      
+                    ]
+                  },
+                  "lastMileTravelString": "1.2 kms",
+                  "hasSurge": false,
+                  "aggregatedDiscountInfoV3": {
+                    "header": "50% OFF",
+                    "subHeader": "UPTO ₹100",
+                    "discountTag": "",
+                    "headerTypeV2": 0
+                  },
+                  "sla": {
+                    "restaurantId": "375271",
+                    "deliveryTime": 15,
+                    "minDeliveryTime": 15,
+                    "maxDeliveryTime": 15,
+                    "lastMileTravel": 1.2000000476837158,
+                    "lastMileDistance": 0,
+                    "serviceability": "SERVICEABLE",
+                    "rainMode": "NONE",
+                    "longDistance": "NOT_LONG_DISTANCE",
+                    "preferentialService": false,
+                    "iconType": "EMPTY"
+                  },
+                  "promoted": false,
+                  "avgRating": "4.0",
+                  "totalRatings": 1000,
+                  "new": false
+                },
+                "subtype": "basic"
+              },
+              {
+                "type": "restaurant",
+                "data": {
+                  "type": "F",
+                  "id": "57722",
+                  "name": "DMB(Doodh Misthan Bhandar)- Bani Park",
+                  "uuid": "494b7749-71d5-4a2d-bff6-afed7639a8fd",
+                  "city": "12",
+                  "area": "Bani Park",
+                  "totalRatingsString": "10000+ ratings",
+                  "cloudinaryImageId": "mwxhhhmz9gdap5zrcojj",
+                  "cuisines": [
+                    "Navratri Special",
+                    "Thalis",
+                    "Chinese",
+                    "Continental",
+                    "Snacks",
+                    "Punjabi"
+                  ],
+                  "tags": [
+                    
+                  ],
+                  "costForTwo": 30000,
+                  "costForTwoString": "₹300 FOR TWO",
+                  "deliveryTime": 26,
+                  "minDeliveryTime": 26,
+                  "maxDeliveryTime": 26,
+                  "slaString": "26 MINS",
+                  "lastMileTravel": 4.099999904632568,
+                  "slugs": {
+                    "restaurant": "dmb-restaurant-bani-park-sindhi-camp-2",
+                    "city": "jaipur"
+                  },
+                  "cityState": "12",
+                  "address": "718, First Floor, Meera Marg, Jhotwara Road, Bani Park, Jaipur",
+                  "locality": "Jhotwara Road",
+                  "parentId": 7093,
+                  "unserviceable": false,
+                  "veg": false,
+                  "select": false,
+                  "favorite": false,
+                  "tradeCampaignHeaders": [
+                    
+                  ],
+                  "ribbon": [
+                    {
+                      "type": "PROMOTED"
+                    }
+                  ],
+                  "chain": [
+                    
+                  ],
+                  "feeDetails": {
+                    "fees": [
+                      {
+                        "name": "distance",
+                        "fee": 3000,
+                        "message": ""
+                      },
+                      {
+                        "name": "time",
+                        "fee": 0,
+                        "message": ""
+                      },
+                      {
+                        "name": "special",
+                        "fee": 0,
+                        "message": ""
+                      }
+                    ],
+                    "totalFees": 3000,
+                    "message": "",
+                    "title": "Delivery Charge",
+                    "amount": "3000",
+                    "icon": ""
+                  },
+                  "availability": {
+                    "opened": true,
+                    "nextOpenMessage": "",
+                    "nextCloseMessage": ""
+                  },
+                  "longDistanceEnabled": 0,
+                  "rainMode": "NONE",
+                  "thirdPartyAddress": false,
+                  "thirdPartyVendor": "",
+                  "adTrackingID": "cid=7381250~p=13~eid=00000189-1fa9-fae2-2daf-fea000dc0d2a~srvts=1688453380834",
+                  "badges": {
+                    "imageBased": [
+                      
+                    ],
+                    "textBased": [
+                      
+                    ],
+                    "textExtendedBadges": [
+                      
+                    ]
+                  },
+                  "lastMileTravelString": "4 kms",
+                  "hasSurge": false,
+                  "aggregatedDiscountInfoV3": {
+                    "header": "50% OFF",
+                    "subHeader": "UPTO ₹100",
+                    "discountTag": "",
+                    "headerTypeV2": 0
+                  },
+                  "sla": {
+                    "restaurantId": "57722",
+                    "deliveryTime": 26,
+                    "minDeliveryTime": 26,
+                    "maxDeliveryTime": 26,
+                    "lastMileTravel": 4.099999904632568,
+                    "lastMileDistance": 0,
+                    "serviceability": "SERVICEABLE",
+                    "rainMode": "NONE",
+                    "longDistance": "NOT_LONG_DISTANCE",
+                    "preferentialService": false,
+                    "iconType": "EMPTY"
+                  },
+                  "promoted": true,
+                  "avgRating": "4.3",
+                  "totalRatings": 10000,
+                  "new": false
+                },
+                "subtype": "basic"
+              },
+              {
+                "type": "restaurant",
+                "data": {
+                  "type": "F",
+                  "id": "55887",
+                  "name": "Rawat Mishthan Bhandar",
+                  "uuid": "137609bc-bd8f-4a70-914e-7dea1b2e49d8",
+                  "city": "12",
+                  "area": "Sindhi Camp",
+                  "totalRatingsString": "10000+ ratings",
+                  "cloudinaryImageId": "uzklu7r1dd7kc1lto5l5",
+                  "cuisines": [
+                    "North Indian",
+                    "Thalis",
+                    "Chinese",
+                    "Mughlai",
+                    "Chaat",
+                    "Punjabi",
+                    "Desserts",
+                    "Snacks",
+                    "Rajasthani",
+                    "Tandoor",
+                    "Sweets",
+                    "Indian",
+                    "Beverages",
+                    "Ice Cream",
+                    "Italian",
+                    "Pastas"
+                  ],
+                  "tags": [
+                    
+                  ],
+                  "costForTwo": 20000,
+                  "costForTwoString": "₹200 FOR TWO",
+                  "deliveryTime": 23,
+                  "minDeliveryTime": 23,
+                  "maxDeliveryTime": 23,
+                  "slaString": "23 MINS",
+                  "lastMileTravel": 2.200000047683716,
+                  "slugs": {
+                    "restaurant": "rawat-mishthan-bhandar-sindhi-camp-sindhi-camp",
+                    "city": "jaipur"
+                  },
+                  "cityState": "12",
+                  "address": "Opposite Polovictory Cinema, Station Road, Sindhi Camp, Jaipur",
+                  "locality": "Kanti Nagar",
+                  "parentId": 167813,
+                  "unserviceable": false,
+                  "veg": true,
+                  "select": false,
+                  "favorite": false,
+                  "tradeCampaignHeaders": [
+                    
+                  ],
+                  "chain": [
+                    
+                  ],
+                  "feeDetails": {
+                    "fees": [
+                      {
+                        "name": "distance",
+                        "fee": 2300,
+                        "message": ""
+                      },
+                      {
+                        "name": "time",
+                        "fee": 0,
+                        "message": ""
+                      },
+                      {
+                        "name": "special",
+                        "fee": 0,
+                        "message": ""
+                      }
+                    ],
+                    "totalFees": 2300,
+                    "message": "",
+                    "title": "Delivery Charge",
+                    "amount": "2300",
+                    "icon": ""
+                  },
+                  "availability": {
+                    "opened": true,
+                    "nextOpenMessage": "",
+                    "nextCloseMessage": ""
+                  },
+                  "longDistanceEnabled": 0,
+                  "rainMode": "NONE",
+                  "thirdPartyAddress": false,
+                  "thirdPartyVendor": "",
+                  "adTrackingID": "",
+                  "badges": {
+                    "imageBased": [
+                      
+                    ],
+                    "textBased": [
+                      
+                    ],
+                    "textExtendedBadges": [
+                      
+                    ]
+                  },
+                  "lastMileTravelString": "2.2 kms",
+                  "hasSurge": false,
+                  "sla": {
+                    "restaurantId": "55887",
+                    "deliveryTime": 23,
+                    "minDeliveryTime": 23,
+                    "maxDeliveryTime": 23,
+                    "lastMileTravel": 2.200000047683716,
+                    "lastMileDistance": 0,
+                    "serviceability": "SERVICEABLE",
+                    "rainMode": "NONE",
+                    "longDistance": "NOT_LONG_DISTANCE",
+                    "preferentialService": false,
+                    "iconType": "EMPTY"
+                  },
+                  "promoted": false,
+                  "avgRating": "4.3",
+                  "totalRatings": 10000,
+                  "new": false
+                },
+                "subtype": "basic"
+              },
+              {
+                "type": "restaurant",
+                "data": {
+                  "type": "F",
+                  "id": "513749",
+                  "name": "Mughal Hotel",
+                  "uuid": "95615765-bc71-40c4-8db8-e47a06f64172",
+                  "city": "12",
+                  "area": "C Scheme",
+                  "totalRatingsString": "100+ ratings",
+                  "cloudinaryImageId": "vxtpeqs2unxmwytfst3h",
+                  "cuisines": [
+                    "North Indian",
+                    "Mughlai",
+                    "Biryani",
+                    "Snacks",
+                    "Thalis"
+                  ],
+                  "tags": [
+                    
+                  ],
+                  "costForTwo": 20000,
+                  "costForTwoString": "₹200 FOR TWO",
+                  "deliveryTime": 29,
+                  "minDeliveryTime": 29,
+                  "maxDeliveryTime": 29,
+                  "slaString": "29 MINS",
+                  "lastMileTravel": 1.899999976158142,
+                  "slugs": {
+                    "restaurant": "mughal-hotel-c-scheme-c-scheme",
+                    "city": "jaipur"
+                  },
+                  "cityState": "12",
+                  "address": "Shop No 56,Shri Ram Market, Jaipur, Rajasthan -302012",
+                  "locality": "",
+                  "parentId": 140947,
+                  "unserviceable": false,
+                  "veg": false,
+                  "select": false,
+                  "favorite": false,
+                  "tradeCampaignHeaders": [
+                    
+                  ],
+                  "chain": [
+                    
+                  ],
+                  "feeDetails": {
+                    "fees": [
+                      {
+                        "name": "distance",
+                        "fee": 2300,
+                        "message": ""
+                      },
+                      {
+                        "name": "time",
+                        "fee": 0,
+                        "message": ""
+                      },
+                      {
+                        "name": "special",
+                        "fee": 0,
+                        "message": ""
+                      }
+                    ],
+                    "totalFees": 2300,
+                    "message": "",
+                    "title": "Delivery Charge",
+                    "amount": "2300",
+                    "icon": ""
+                  },
+                  "availability": {
+                    "opened": true,
+                    "nextOpenMessage": "",
+                    "nextCloseMessage": ""
+                  },
+                  "longDistanceEnabled": 0,
+                  "rainMode": "NONE",
+                  "thirdPartyAddress": false,
+                  "thirdPartyVendor": "",
+                  "adTrackingID": "",
+                  "badges": {
+                    "imageBased": [
+                      
+                    ],
+                    "textBased": [
+                      
+                    ],
+                    "textExtendedBadges": [
+                      
+                    ]
+                  },
+                  "lastMileTravelString": "1.8 kms",
+                  "hasSurge": false,
+                  "aggregatedDiscountInfoV3": {
+                    "header": "50% OFF",
+                    "subHeader": "UPTO ₹100",
+                    "discountTag": "",
+                    "headerTypeV2": 0
+                  },
+                  "sla": {
+                    "restaurantId": "513749",
+                    "deliveryTime": 29,
+                    "minDeliveryTime": 29,
+                    "maxDeliveryTime": 29,
+                    "lastMileTravel": 1.899999976158142,
+                    "lastMileDistance": 0,
+                    "serviceability": "SERVICEABLE",
+                    "rainMode": "NONE",
+                    "longDistance": "NOT_LONG_DISTANCE",
+                    "preferentialService": false,
+                    "iconType": "EMPTY"
+                  },
+                  "promoted": false,
+                  "avgRating": "3.4",
+                  "totalRatings": 100,
+                  "new": false
+                },
+                "subtype": "basic"
+              },
+              {
+                "type": "restaurant",
+                "data": {
+                  "type": "F",
+                  "id": "47395",
+                  "name": "Subway",
+                  "uuid": "daad04db-f345-470e-90db-cc4584af47ec",
+                  "city": "12",
+                  "area": "Elements Mall",
+                  "totalRatingsString": "10000+ ratings",
+                  "cloudinaryImageId": "1ace5fa65eff3e1223feb696c956b38b",
+                  "cuisines": [
+                    "Fast Food",
+                    "Healthy Food",
+                    "Salads",
+                    "Desserts",
+                    "Beverages",
+                    "Snacks",
+                    "Continental",
+                    "Italian",
+                    "Italian-American",
+                    "American"
+                  ],
+                  "tags": [
+                    
+                  ],
+                  "costForTwo": 20000,
+                  "costForTwoString": "₹200 FOR TWO",
+                  "deliveryTime": 33,
+                  "minDeliveryTime": 33,
+                  "maxDeliveryTime": 33,
+                  "slaString": "33 MINS",
+                  "lastMileTravel": 4.800000190734863,
+                  "slugs": {
+                    "restaurant": "subway-ajmer-road-vaishali-nagar",
+                    "city": "jaipur"
+                  },
+                  "cityState": "12",
+                  "address": "Subway Elements mall, Ajmer Rd, DCM, Jaipur, Rajasthan 302021",
+                  "locality": "Bopal",
+                  "parentId": 2,
+                  "unserviceable": false,
+                  "veg": false,
+                  "select": false,
+                  "favorite": false,
+                  "tradeCampaignHeaders": [
+                    
+                  ],
+                  
+        }
+      }
+]
 
-const root = ReactDOM.createRoot(document.getElementById("root")); // creating a root is part of react dom
-
-
-root.render(heading);
-// dom manipulation is heavy thing react built on concept that dom manipulation done by js only
-
-
-
-
-
-
-// 1. EMMET
-{
-  /*
-Emmet is a popular abbreviation and tool used in web development. 
-It stands for "Efficiently Misleading Markup, Extremely Metamorphic Entity,
- or Emmet." Emmet is a plugin for text editors or integrated development 
- environments (IDEs) that allows developers to write HTML and CSS code more
-  quickly and efficiently.
-With Emmet, you can use shorthand syntax and abbreviations to generate code 
-snippets rapidly. It enables you to expand simple expressions into complex code
- structures. For example, you can type ul>li*5>a and expand it to:
-*/
+const Header = () => {
+    return (
+        <div className="header">
+            <div className="logo-container">
+                <img className="logo" src="https://marketplace.canva.com/EAFN6Q3nIfE/1/0/1600w/canva-beige-modern-food-logo-KnS0Ou7vY4M.jpg"/>
+            </div>
+            <div className="nav-items">
+                <ul>
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Contact us</li>
+                    <li>Cart</li>
+                </ul>
+            </div>
+        </div>
+    )
 }
 
-// 2. difference b/w library and framework
+const RestrauntCard = (props) => {
+    const {resData} = props
+    const {name, cuisines, avgRating, cloudinaryImageId, costForTwo, deliveryTime} = resData.data
 
-{/*
-The terms "library" and "framework" refer to different concepts in software development. Here's an overview of the key differences between them:
+    console.log({name, cuisines, avgRating, cloudinaryImageId})
+ return (
+    <div className='res-card' style={{
+        backgroundColor: "lightGray"
+    }}>
+        <img className='res-logo' alt="res-logo" src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_350,c_fill/"+ cloudinaryImageId}/>
+        <h3>{name}</h3>
+        <h5 >{cuisines.join(", ")}</h5>
+        <h5>{avgRating}</h5>
+        <h5>{costForTwo}</h5>
+        <h5>{deliveryTime}</h5>
+    </div>
+ )
+}
 
-Library:
-- A library is a collection of precompiled code or modules that provide specific functionality or features.
-- It typically consists of reusable functions, classes, or components that developers can incorporate into their projects.
-- Libraries are usually focused on solving specific tasks or providing specific capabilities.
-- Developers have more control and flexibility over how they use a library since they directly invoke its functions or classes within their code.
-- Examples of popular libraries include jQuery (JavaScript library), NumPy (Python library for numerical computations), and React (JavaScript library for building user interfaces).
+const Body = () => {
+    return (
+        <div className="body">
+            <div className="search">Search</div>
+            <div className="res-container">
+             { resList.map((res, i) =>  <RestrauntCard key={res.data.id} resData={res} />)}
+            </div>
+        </div>
+    )
+}
+const AppLayout = () => {
+    return (
+        <div className="app">
+            <Header/>
+            <Body/>
+        </div>
+    )
+}
 
-Framework:
-- A framework is a more extensive and structured set of tools, libraries, and conventions that provide a foundation for developing applications.
-- It offers a complete structure, including predefined rules, conventions, and a set of abstractions for building applications.
-- Frameworks dictate the overall architecture and flow of the application, often following a specific design pattern (e.g., MVC or MVVM).
-- Developers build their applications by extending or customizing the framework's core components and leveraging its features and functionalities.
-- Frameworks provide higher-level abstractions, which can make development faster but may limit some flexibility compared to libraries.
-- Examples of popular frameworks include Django (Python web framework), Ruby on Rails (Ruby web framework), and Angular (JavaScript framework for web applications).
 
-In summary, while libraries provide specific functionality that developers can use as needed, frameworks offer a more comprehensive structure and set of conventions for building applications. Libraries provide more flexibility, while frameworks provide a predefined structure and flow for developers to follow.
-*/}
 
-// 3. CDN
 
-{/*
-CDN stands for Content Delivery Network. It is a globally distributed network of servers or data centers strategically located across different geographical locations. The primary purpose of a CDN is to deliver web content, such as images, CSS files, JavaScript files, videos, and other static assets, to end-users more efficiently and quickly.
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-Here are some reasons why CDNs are used:
-
-1. Improved Performance: CDNs are designed to reduce latency and improve website performance. By caching and distributing content across multiple servers located closer to end-users, CDNs can deliver content from the nearest server, reducing the distance data needs to travel and improving response times.
-
-2. Enhanced Scalability: CDNs help distribute the load of delivering content by offloading traffic from the origin server. They can handle high volumes of concurrent requests, ensuring that websites and applications remain accessible even during peak traffic periods or sudden traffic spikes.
-
-3. Global Availability: CDNs have servers distributed worldwide, allowing them to serve content to users in different regions more effectively. This global presence helps reduce network congestion and enables faster content delivery across different geographical locations.
-
-4. Bandwidth Savings: CDNs can help save bandwidth on the origin server by caching and serving static content. When a user requests content that has been previously cached on the CDN's servers, it can be delivered directly from the CDN's edge server, reducing the load on the origin server and saving bandwidth costs.
-
-5. Improved Reliability: CDNs provide increased redundancy and fault tolerance. If one server in the CDN network becomes unavailable, the content can be automatically served from another nearby server, ensuring better reliability and reducing the risk of downtime.
-
-6. Security and DDoS Mitigation: Many CDNs offer built-in security features and protection against Distributed Denial of Service (DDoS) attacks. They can help mitigate the impact of malicious traffic and provide additional layers of security to safeguard websites and applications.
-
-Overall, CDNs offer numerous benefits, including improved performance, scalability, availability, bandwidth savings, reliability, and security, making them a valuable tool for optimizing content delivery on the web.
-*/}
-
-// 4. Cross-Origin in script tag
-
-{/*
-The "cross-origin" attribute in the `<script>` tag is used to specify whether a script file can be loaded from a different origin (domain, protocol, or port) than the web page that includes it. It is an important security feature implemented by web browsers to mitigate potential security risks associated with cross-origin resource sharing (CORS).
-
-By default, web browsers enforce a "same-origin" policy, which means that scripts, stylesheets, and other resources can only be loaded from the same origin as the web page itself. This policy helps prevent malicious scripts from accessing sensitive data or performing unauthorized actions on behalf of the user.
-
-When you include an external JavaScript file using the `<script>` tag, the browser performs a CORS check to determine whether the script file can be loaded. If the script file is hosted on a different origin, the browser checks for the presence of the "crossorigin" attribute on the `<script>` tag. If the attribute is present, it triggers additional CORS mechanisms to validate the cross-origin request.
-
-The "crossorigin" attribute can have two possible values:
-
-1. "anonymous": This value indicates that the script file does not require any credentials or cookies to be sent along with the request. The browser will add an "Origin" header to the request, indicating the origin of the web page that initiated the request.
-
-2. "use-credentials": This value indicates that the script file requires credentials or cookies to be sent along with the request. The browser will include the relevant credentials and cookies in the request.
-
-By specifying the appropriate "crossorigin" value, you can control how the browser handles the loading and execution of script files from different origins, while adhering to the security restrictions imposed by the same-origin policy.
-*/}
-
-// 5. React known as react
-
-{/* 
-React, also known as React.js, is a JavaScript library developed and maintained by Facebook. It is called "React" because its main concept revolves around reactive and efficient user interface (UI) development.
-
-The name "React" refers to the library's core principle, which is to efficiently update and render components in response to changes in application state. When the state of a React component changes, React intelligently determines the minimal set of updates needed to reflect those changes in the user interface. It achieves this by utilizing a virtual DOM (Document Object Model) and employing a diffing algorithm to efficiently update only the necessary parts of the UI.
-
-The reactive nature of React allows developers to build dynamic and interactive UIs by composing components that update and react to changes. React encourages a declarative programming style, where developers define how the UI should look for different states rather than manually manipulating the DOM.
-
-Furthermore, React's component-based architecture enables code reusability and modularity, making it easier to build complex UIs by breaking them down into smaller, reusable components. This approach aligns with the idea of "reacting" to changes and building UIs in a reactive manner.
-
-Overall, the name "React" reflects the library's core philosophy of efficiently updating and rendering components in response to changes, making it a popular choice for building modern, responsive web applications.
-*/}
-
-// 6. React v/s ReactDOM
-
-{/*
-React and ReactDOM are two distinct but related entities in the React ecosystem:
-
-1. React: React, or React.js, is a JavaScript library for building user interfaces. It provides a declarative syntax for describing the UI and efficiently updating the components when the underlying data changes. React is responsible for managing the component lifecycle, state management, and rendering components into a virtual DOM.
-
-2. ReactDOM: ReactDOM is a specific package within the React ecosystem that provides the glue between React and the actual DOM (Document Object Model) of the web page. It includes methods and APIs for interacting with the browser's DOM, such as rendering React components into the browser, updating the DOM in response to component changes, and handling events.
-
-In simpler terms, React focuses on the core functionality of building and managing components, while ReactDOM deals with the interaction between React and the browser's DOM. ReactDOM provides the necessary tools and methods to render React components into the actual HTML elements on the web page and keep them in sync with the component's state and props.
-
-To summarize, React is the library responsible for the component-based UI development, while ReactDOM is the package that facilitates the integration of React components with the browser's DOM.
-*/}
-
-//7.difference b/w react.development.js and react.production.js file via cdn
-
-{/*
-When using React via a CDN (Content Delivery Network), you will often find two versions of the React library available: `react.development.js` and `react.production.js`. The main differences between these two files are related to performance, size, and debugging capabilities.
-
-1. `react.development.js`:
-   - Development Version: This version of React is intended for use during development and debugging stages.
-   - Larger Size: The development version is larger in size because it includes additional warnings, error messages, and debugging tools. This helps developers identify potential issues and provides more detailed error information.
-   - Enhanced Debugging: The development version enables helpful warnings and error messages in the browser's console. It also provides better support for debugging and offers more readable stack traces, making it easier to trace and identify issues within the React code.
-
-2. `react.production.js`:
-   - Production Version: This version of React is optimized for production use.
-   - Smaller Size: The production version is smaller in size compared to the development version. It undergoes various optimizations, including minification and removal of development-specific code, comments, and debugging tools.
-   - Improved Performance: The smaller file size and optimized code result in faster parsing and execution by the browser, leading to improved performance and reduced load times for end-users.
-   - No Warnings or Debugging: The production version disables the warnings and error messages that are present in the development version. This omission helps reduce unnecessary overhead and improves the overall performance of the application.
-
-In summary, the `react.development.js` file includes additional debugging features, larger file size, and helpful warnings for development and debugging purposes. On the other hand, the `react.production.js` file is optimized for production use, resulting in a smaller file size, improved performance, and the absence of debugging features and warnings. It is recommended to use the production version in a production environment to benefit from the optimized and streamlined code.
-*/}
-
-// 8. async and defer
-
-{/*
-`async` and `defer` are attributes that can be used in HTML `<script>` tags to control how external JavaScript files are loaded and executed. 
-
-1. `async` attribute:
-   - When the `async` attribute is added to a `<script>` tag, it indicates that the script file can be loaded asynchronously.
-   - An asynchronously loaded script does not block the parsing of the HTML document. The browser continues parsing the HTML document while the script is being fetched in the background.
-   - Once the script is fetched, it is executed as soon as it is available, regardless of whether the HTML document has finished parsing or not.
-   - Multiple scripts with the `async` attribute can be downloaded concurrently, potentially improving page loading performance.
-   - However, the order of script execution may not be guaranteed, as scripts may be executed as soon as they are available, regardless of their original order in the HTML document.
-
-2. `defer` attribute:
-   - The `defer` attribute also allows the script to be loaded asynchronously, but with a difference in behavior compared to `async`.
-   - A script with the `defer` attribute is also fetched asynchronously, allowing the HTML parsing to continue without being blocked.
-   - However, the script is executed only after the HTML document has finished parsing.
-   - Multiple scripts with the `defer` attribute are executed in the order they appear in the HTML document.
-   - The `defer` attribute is useful when the execution order of the scripts is important, and the scripts are not dependent on modifying the DOM immediately during parsing.
-
-In summary, the `async` attribute allows the script to be fetched and executed asynchronously, without blocking the HTML parsing. The `defer` attribute also fetches the script asynchronously but ensures that the script is executed after the HTML parsing is complete and in the order they appear in the document.
-*/}
+root.render(<AppLayout/>)

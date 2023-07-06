@@ -146,3 +146,97 @@ The package-lock.json file is automatically updated by npm or Yarn whenever you 
 
 In summary, the package.json file defines the high-level dependencies required by the project, while the package-lock.json file ensures deterministic and consistent installation of those dependencies across different environments. The package-lock.json file is primarily generated and managed by the package manager itself and is not typically manually modified by developers.
 
+
+### Q.11. What is "node_modules"? Is it good idea to push that on git?
+
+=> A Node module refers to a reusable piece of JavaScript code or library that encapsulates functionality and can be imported and used in other Node.js applications. Node modules are typically packaged and distributed using the Node Package Manager (npm) or Yarn.
+
+When you install dependencies for your Node.js project using npm or Yarn, the modules are downloaded and stored in the `node_modules` directory within your project's folder structure. Each module typically contains its own code, configuration files, and potentially additional dependencies.
+
+As for whether it's a good idea to push modules to a Git repository, the general practice is to exclude the `node_modules` directory from version control. Here are a few reasons for this:
+
+1. Dependency management: The `node_modules` directory can contain a large number of files, which can make your repository significantly larger and slower to clone or fetch. Since the dependencies can be easily installed using npm or Yarn based on the `package.json` file, there's no need to include them in version control.
+
+2. Build consistency: Different developers or environments may have different versions of dependencies installed based on their local setups. By excluding the `node_modules` directory, you ensure that everyone working on the project installs the same versions of dependencies specified in the `package.json` file.
+
+3. Faster deployments: When deploying your application, you don't need to include the `node_modules` directory, as it can be recreated by running the `npm install` or `yarn install` command on the deployment server. This reduces the size and complexity of your deployment package.
+
+To ensure that other developers or deployment environments can easily reproduce your project's dependencies, it's important to include the `package.json` and `package-lock.json` (or `yarn.lock`) files in your version control. These files specify the exact versions or version ranges of the dependencies required for your project.
+
+In summary, it's generally recommended not to push modules (i.e., the `node_modules` directory) to Git but instead rely on package managers to install dependencies based on the `package.json` file. This practice helps keep your repository clean, reduces its size, ensures consistent dependency management, and simplifies deployments.
+
+### Q.12. What is "dist" folder?
+
+=> the "dist" folder contains the compiled, optimized, and ready-to-deploy version of a project's source code, making it easier to distribute the project to end-users or deploy it to production servers.
+
+
+### caret '^' and tilde '~' 
+
+=> In the context of specifying versions in a package.json file, the caret (^) and tilde (~) symbols are used as part of version range notation to define the acceptable range of package versions.
+
+1. Caret (^):
+The caret symbol (^) is used to indicate a compatible range of versions. When used with a version number, it allows updates to the most recent minor or patch version while keeping the major version fixed. For example, specifying "^1.2.3" means that any version from 1.2.3 up to, but excluding, 2.0.0 is considered acceptable.
+
+2. Tilde (~):
+The tilde symbol (~) is used to specify a range that allows for updates to the most recent patch version while keeping the major and minor versions fixed. When used with a version number, it allows updates to the most recent patch version within the specified minor version. For example, specifying "~1.2.3" means that any version from 1.2.3 up to, but excluding, 1.3.0 is considered acceptable.
+
+Here are a few examples to illustrate the use of caret and tilde:
+
+- "^1.2.3": Allows updates to any version in the 1.x.x range, as long as the major version remains 1.
+- "~1.2.3": Allows updates to any version in the 1.2.x range, as long as the major and minor versions remain 1.2.
+- "^0.2.3": Allows updates to any version in the 0.2.x range, as long as the major version remains 0.
+- "~0.2.3": Allows updates to any version in the 0.2.x range, as long as the major and minor versions remain 0.2.
+
+These version range notations are used to provide flexibility in managing dependencies by allowing for updates to bug fixes and patches while maintaining a certain level of compatibility with the specified major and minor versions. The specific version range notation chosen depends on the desired level of flexibility and compatibility required for the project.
+
+
+### Different types of script in html
+
+=> In HTML, the `<script>` tag is used to embed or reference JavaScript code within an HTML document. The `<script>` tag supports different types of script declarations through the `type` attribute. Here are the commonly used script types:
+
+1. Inline Scripts:
+   ```html
+   <script type="text/javascript">
+     // JavaScript code here
+   </script>
+   ```
+   The `text/javascript` type is the default and most widely supported script type. If no `type` attribute is specified, the browser assumes it to be `text/javascript`.
+
+2. External Scripts:
+   ```html
+   <script src="script.js" type="text/javascript"></script>
+   ```
+   By specifying the `src` attribute, you can reference an external JavaScript file. The `type` attribute in this case is optional, as `text/javascript` is the default.
+
+3. Module Scripts:
+   ```html
+   <script type="module">
+     // ES modules code here
+   </script>
+   ```
+   The `module` type is used to define JavaScript code as an ES module. It allows you to use the `import` and `export` statements for modular JavaScript development. Note that module scripts are subject to strict mode by default.
+
+4. Inline Event Handlers:
+   ```html
+   <button onclick="myFunction()">Click me</button>
+   ```
+   In this case, the `type` attribute is not used, but the script code is directly embedded within the event handler attribute (`onclick`, `onload`, etc.). This approach is known as an inline event handler.
+
+These are the primary script types used in HTML. It's important to note that HTML5 does not enforce strict adherence to specific script types, and modern browsers often assume `text/javascript` by default if the `type` attribute is omitted or unrecognized. However, specifying the appropriate script type is considered good practice for clarity and compatibility purposes.
+
+
+# Code update #
+
+- git initialize
+- initialize 'npm' in the repo
+- 'react' and 'react-dom' installed
+- app is ignited with parcel
+- .gitignore files are added
+
+
+
+### Reference
+- parcel documentation
+- browserlist.dev
+
+
