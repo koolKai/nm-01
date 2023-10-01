@@ -19,3 +19,25 @@ Image Optimization
  - Tree Shacking - remove unused code
 
 
+# food ordering app
+
+// React Element 
+/*
+* Header
+  - Logo
+  - Navigation
+* Body
+  - Search
+  - RestrauntContainer
+    -restrount cards
+        - img
+        - name of restraunt
+        - cuisine
+        - time for delivery
+        - star ratings
+* Footer
+  - Copyright
+  - Links
+  - Address
+  - Contact
+*/ 

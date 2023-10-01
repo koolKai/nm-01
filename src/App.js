@@ -1,26 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import Header from "./components/Header"
 
-// React Element 
-/*
-* Header
-  - Logo
-  - Navigation
-* Body
-  - Search
-  - RestrauntContainer
-    -restrount cards
-        - img
-        - name of restraunt
-        - cuisine
-        - time for delivery
-        - star ratings
-* Footer
-  - Copyright
-  - Links
-  - Address
-  - Contact
-*/ 
 
 const resList = [
               {
@@ -1791,53 +1772,11 @@ const resList = [
       }
 ]
 
-const Header = () => {
-    return (
-        <div className="header">
-            <div className="logo-container">
-                <img className="logo" src="https://marketplace.canva.com/EAFN6Q3nIfE/1/0/1600w/canva-beige-modern-food-logo-KnS0Ou7vY4M.jpg"/>
-            </div>
-            <div className="nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact us</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-        </div>
-    )
-}
 
-const RestrauntCard = (props) => {
-    const {resData} = props
-    const {name, cuisines, avgRating, cloudinaryImageId, costForTwo, deliveryTime} = resData.data
 
-    console.log({name, cuisines, avgRating, cloudinaryImageId})
- return (
-    <div className='res-card' style={{
-        backgroundColor: "lightGray"
-    }}>
-        <img className='res-logo' alt="res-logo" src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_350,c_fill/"+ cloudinaryImageId}/>
-        <h3>{name}</h3>
-        <h5 >{cuisines.join(", ")}</h5>
-        <h5>{avgRating}</h5>
-        <h5>{costForTwo}</h5>
-        <h5>{deliveryTime}</h5>
-    </div>
- )
-}
 
-const Body = () => {
-    return (
-        <div className="body">
-            <div className="search">Search</div>
-            <div className="res-container">
-             { resList.map((res, i) =>  <RestrauntCard key={res.data.id} resData={res} />)}
-            </div>
-        </div>
-    )
-}
+
+
 const AppLayout = () => {
     return (
         <div className="app">
